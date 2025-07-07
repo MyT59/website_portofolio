@@ -1,4 +1,3 @@
-
 import Particles from '../components/Particles';
 import vscodeLogo from '../asset/vscode.png';
 import githubLogo from '../asset/github.png';

@@ -1,7 +1,6 @@
 import React from "react";
 import ProfileCard from "../components/ProfileCard";
 import avatar from "../asset/profil.jpg";
-import miniavatar from "../asset/t12.png.jpg";
 import DecryptedText from "../components/DecryptedText";
 import Orb from "../components/Orb";
 import { FaGithub, FaLinkedin } from "react-icons/fa";

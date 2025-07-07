@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, MotionStyle, Transition } from "framer-motion"; // Pastikan `framer-motion` sudah di-install
+import { motion } from "framer-motion"; // Pastikan `framer-motion` sudah di-install
 
 export const BorderBeam = ({
   className,
@@ -24,15 +24,13 @@ export const BorderBeam = ({
     >
       <motion.div
         className={`absolute aspect-square bg-gradient-to-l ${className || ""}`}
-        style={
-          {
-            width: size,
-            offsetPath: `rect(0 auto auto 0 round ${size}px)`,
-            "--color-from": colorFrom,
-            "--color-to": colorTo,
-            ...style,
-          }
-        }
+        style={{
+          width: size,
+          offsetPath: `rect(0 auto auto 0 round ${size}px)`,
+          "--color-from": colorFrom,
+          "--color-to": colorTo,
+          ...style,
+        }}
         initial={{ offsetDistance: `${initialOffset}%` }}
         animate={{
           offsetDistance: reverse
