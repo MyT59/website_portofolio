@@ -58,7 +58,7 @@ section {
   background-color: #1e1e2f;
   border-radius: 10px;
   overflow: hidden;
-  width: 45%;
+  width: 30%;
   height: 50%;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   transition: transform 0.3s ease;
@@ -113,6 +113,7 @@ section {
   font-weight: bold;
   margin: 10px 0;
   color: #ccc;
+  font-size: larger;
 }
 
 .card-body ul {
@@ -124,7 +125,9 @@ section {
 
 .card-body ul li {
   margin-bottom: 5px;
+  font-size: larger;
 }
+
 
 
 

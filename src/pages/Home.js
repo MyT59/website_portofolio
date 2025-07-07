@@ -4,6 +4,8 @@ import avatar from "../asset/profil.jpg";
 import miniavatar from "../asset/t12.png.jpg";
 import DecryptedText from "../components/DecryptedText";
 import Orb from "../components/Orb";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+
 
 function Home() {
   return (
@@ -18,7 +20,7 @@ function Home() {
     >
       <Orb
         hue={250}
-        hoverIntensity={0.6}
+        hoverIntensity={0.3}
         rotateOnHover={true}
         forceHoverState={false}
       />
@@ -57,6 +59,24 @@ function Home() {
             className=""
             style={{ fontSize: "40px", color: "white", marginBottom: "20px" }}
           />
+          <div style={{ display: "flex", gap: "20px", marginTop: "10px" }}>
+    <a
+      href="https://github.com/MyT59" 
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ color: "white", fontSize: "80px" }}
+    >
+      <FaGithub />
+    </a>
+    <a
+      href="https://www.linkedin.com/in/michael-tampubolon-5b201628b/" 
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ color: "white", fontSize: "80px" }}
+    >
+      <FaLinkedin />
+    </a>
+  </div>
         </div>
       </div>
     </section>

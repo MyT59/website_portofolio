@@ -1,4 +1,7 @@
 import Particles from '../components/Particles';
+import malwareLogo from '../asset/malware.png';
+import webLogo from '../asset/Web.png';
+import androidLogo from '../asset/androidd.png';
 
 function Portfolio() {
   return (
@@ -9,7 +12,7 @@ function Portfolio() {
         moveParticlesOnHover={true}
         alphaParticles={true}
         speed={0.3}
-        particleBaseSize={60}
+        particleBaseSize={50}
         sizeRandomness={2}
         className=""
       />
@@ -17,48 +20,49 @@ function Portfolio() {
 <div className="card-container">
   <div className="card">
     <div className="card-header facebook">
-      <img src="/facebook-logo.png" alt="Facebook" className="logo" />
-      <h2>Mobile Programing</h2>
+      <img src={androidLogo} alt="Android" className="logo" />
+      <h1>Mobile Programing</h1>
     </div>
     <div className="card-body">
-      <h3>Software Engineer</h3>
-      <p className="date">June 2018 – Present</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h2>E-commerce Mobile App</h2>
+      <p className="date">Sep 2024 - Dec 2024</p>
+      <p style={{fontSize:'larger'}}>Developed an e-commerce Android app using Android Studio</p>
       <ul>
-        <li>Build UI interaktif</li>
-        <li>Integrasi real-time chat</li>
+        <li>product data storage and SQLite for local user account management</li>
+        <li>Designed a seamless shopping experience with features</li>
       </ul>
     </div>
   </div>
 
   <div className="card">
     <div className="card-header quora">
-      <img src="/quora-logo.png" alt="Quora" className="logo" />
-      <h2>Web Programing</h2>
+      <img src={webLogo} alt="Web" className="logo" />
+      <h1>Web Programing</h1>
     </div>
     <div className="card-body">
-      <h3>Front-End Developer</h3>
-      <p className="date">May 2017 – May 2018</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h2>Dorm and Campus Virtual Tour</h2>
+      <p className="date">Nov 2024 - Dec 2024</p>
+      <p style={{fontSize:'larger'}}>Developed Dorm and Campus Virtual Tour website</p>
       <ul>
-        <li>Konversi desain ke HTML</li>
-        <li>Optimasi performa</li>
+        <li>Designed and developed an interactive virtual tour website</li>
+        <li>Experimented with different 360° tour platforms</li>
       </ul>
     </div>
   </div>
 
   <div className="card">
     <div className="card-header airbnb">
-      <img src="/airbnb-logo.png" alt="Airbnb" className="logo" />
-      <h2>Malware Analysis</h2>
+      <img src={malwareLogo} alt="Malware" className="logo" />
+      <h1>Cyber Security</h1>
     </div>
     <div className="card-body">
-      <h3>Cyber Security</h3>
-      <p className="date">Jan 2015 – Sep 2015</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h2>Malware Analysis</h2>
+      <p className="date">Mar 2025 - May 2025</p>
+      <p style={{fontSize:'larger'}}>Analysing Malware using flare virtual machine and remnux in virtual box</p>
       <ul>
-        <li>Buat dashboard</li>
-        <li>Testing unit</li>
+        <li>Basic Static Analysis</li>
+        <li>Basic Dynamic Analysis</li>
+        <li>Reverse Engineering</li>
       </ul>
     </div>
   </div>
