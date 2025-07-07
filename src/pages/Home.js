@@ -40,7 +40,6 @@ function Home() {
           avatarUrl={avatar}
           miniAvatarUrl={avatar}
           name="Michael Tampubolon"
-          title="Cyber Security"
           handle="michael.dev"
           status="Available"
           contactText="Contact me"

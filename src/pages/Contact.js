@@ -24,10 +24,10 @@ function Contact() {
         initialOffset={0}
       />
       <h2 style={{ fontSize: "40px" }}>Contact</h2>
-      <p>Email: michaeltampubolon23@gmail.com</p>
-      <p>Instagram: @jerapahhh_59</p>
+      <p style={{ fontSize: "20px" }}>Email: michaeltampubolon23@gmail.com</p>
+      <p style={{ fontSize: "20px" }}>Instagram: @jerapahhh_59</p>
       <div className="contact-form" style={{ position: "relative", zIndex: 1 }}>
-        <h2>Contact Me</h2>
+        <h2>Tell Me Something</h2>
         <form action="https://formspree.io/f/mrbkvvlw" method="POST">
           <label style={{ marginBottom: "10px" }}>Email</label>
           <input

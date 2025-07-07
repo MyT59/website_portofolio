@@ -43,7 +43,7 @@ const ProfileCardComponent = ({
   enableTilt = true,
   miniAvatarUrl,
   name = "Javi A. Torres",
-  title = "Software Engineer",
+  title = "",
   handle = "javicodes",
   status = "Online",
   contactText = "Contact",

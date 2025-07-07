@@ -113,11 +113,11 @@ function Skills() {
               }}
             >
               <img
-                src={sqlLogo}
-                alt="Sql"
+                src={reactLogo}
+                alt="React"
                 style={{ width: "40px", height: "40px" }}
               />
-              <SkillBar skill="Sql" level="80%" />
+              <SkillBar skill="React" level="70%" />
             </div>
           </SpotlightCard>
 
@@ -132,13 +132,15 @@ function Skills() {
               }}
             >
               <img
-                src={reactLogo}
-                alt="React"
+                src={sqlLogo}
+                alt="Sql"
                 style={{ width: "40px", height: "40px" }}
               />
-              <SkillBar skill="React" level="70%" />
+              <SkillBar skill="Sql" level="80%" />
             </div>
           </SpotlightCard>
+
+
 
           <SpotlightCard spotlightColor="rgba(0, 229, 255, 0.2)">
             <div

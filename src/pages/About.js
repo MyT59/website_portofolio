@@ -46,7 +46,7 @@ function About() {
         >
           I'm an IT student from President University. My passion is in Network
           especialy with cisco, Linux, Remnux, Wireshark and Web Programing with
-          Java script, HTML, Css, and ReactJs.
+          Java script, HTML, CSS, and React.Js.
         </p>
         <h1
           style={{
