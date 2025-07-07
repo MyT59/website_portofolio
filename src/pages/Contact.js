@@ -1,13 +1,13 @@
-import Particles from '../components/Particles';
+import Particles from "../components/Particles";
 import { BorderBeam } from "../components/BorderBeam";
 import "../components/Contact.css";
-
-
+import React from "react";
+import { useForm, ValidationError } from "@formspree/react";
 
 function Contact() {
   return (
     <section id="contact" data-aos="fade-up-left">
-          <Particles
+      <Particles
         particleCount={250}
         particleColors={["#00ffff", "#ffffff", "#00ffcc"]}
         moveParticlesOnHover={true}
@@ -17,7 +17,7 @@ function Contact() {
         sizeRandomness={2}
         className=""
       />
-            <BorderBeam
+      <BorderBeam
         size={80}
         duration={6}
         colorFrom="#00f0ff"
@@ -25,26 +25,34 @@ function Contact() {
         borderWidth={2}
         initialOffset={0}
       />
-            <h2 style={{fontSize:'40px'}}>Contact</h2>
+      <h2 style={{ fontSize: "40px" }}>Contact</h2>
       <p>Email: michaeltampubolon23@gmail.com</p>
       <p>Instagram: @jerapahhh_59</p>
       <div className="contact-form" style={{ position: "relative", zIndex: 1 }}>
         <h2>Contact Me</h2>
         <form action="https://formspree.io/f/mrbkvvlw" method="POST">
-
-          <label style={{marginBottom:'10px'}}>Email</label>
-          <input type="email" name="email" placeholder="you@example.com" required />
+          <label style={{ marginBottom: "10px" }}>Email</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="you@example.com"
+            required
+          />
 
           <label>Subject</label>
           <input type="text" name="subject" placeholder="Subject" required />
 
           <label>message</label>
-          <textarea name="message" rows="5" placeholder="Write your text..." required />
+          <textarea
+            name="message"
+            rows="5"
+            placeholder="Write your text..."
+            required
+          />
 
           <button type="submit">Send</button>
         </form>
       </div>
-
     </section>
   );
 }
