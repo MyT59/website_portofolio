@@ -30,7 +30,7 @@ function Contact() {
       <p>Instagram: @jerapahhh_59</p>
       <div className="contact-form" style={{ position: "relative", zIndex: 1 }}>
         <h2>Contact Me</h2>
-        <form action="https://formsubmit.co/michaeltampubolon23@gmail.com" method="POST">
+        <form action="https://formspree.io/f/mrbkvvlw" method="POST">
 
           <label style={{marginBottom:'10px'}}>Email</label>
           <input type="email" name="email" placeholder="you@example.com" required />
