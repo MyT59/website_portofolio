@@ -1,8 +1,6 @@
 import Particles from "../components/Particles";
 import { BorderBeam } from "../components/BorderBeam";
 import "../components/Contact.css";
-import React from "react";
-import { useForm, ValidationError } from "@formspree/react";
 
 function Contact() {
   return (
