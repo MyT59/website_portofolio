@@ -1,0 +1,10 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+COPY generate_random.py .
+COPY serial_test .
+COPY multithreading_test.py .
+COPY multiprocessing_test.py .
+
+CMD  ["python", "serial_test.py"]
