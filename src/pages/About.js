@@ -41,7 +41,9 @@ function About() {
             textAlign: "center",
           }}
         >
-          I'm an IT student from President University.
+          I am an Information Technology student at President University with a focused interest in Cyber Security. My academic journey is driven by a deep commitment to understanding and implementing modern security practices to safeguard digital assets and systems. Currently, I am engaged in an internship to gain practical, hands-on experience and deepen my knowledge in real-world environments.
+
+With a proactive mindset and strong analytical skills, I am eager to collaborate with organizations and professionals who share a vision of secure, innovative digital solutions. I am open to future partnerships and career opportunities that allow me to contribute meaningfully to the evolving landscape of cybersecurity.
         </p>
         
       </div>
