@@ -50,7 +50,7 @@ function Home() {
             Hi, I'm Michael Tampubolon 👋
           </h1>
           <DecryptedText
-            text="I'm a Cyber security & Frontend Developer"
+            text="I'm a cyber security enthusiast & Frontend Developer"
             animateOn="view"
             revealDirection="center"
             className=""

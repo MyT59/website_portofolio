@@ -16,7 +16,7 @@ function Portfolio() {
         sizeRandomness={2}
         className=""
       />
-      <h2 style={{ fontSize: "4rem", marginBottom: "20px" }}>Portfolio</h2>
+      <h2 style={{ fontSize: "4rem", marginBottom: "20px",textAlign: "center", }}>Portfolio</h2>
 <div className="card-container">
   <div className="card">
     <div className="card-header facebook">
