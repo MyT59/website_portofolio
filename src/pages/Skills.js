@@ -46,7 +46,15 @@ function Skills() {
           padding: "60px 20px",
         }}
       >
-        <h2 style={{ fontSize: "3rem", marginBottom: "40px", textAlign: "center" }}>My Skills</h2>
+        <h2
+          style={{
+            fontSize: "3rem",
+            marginBottom: "40px",
+            textAlign: "center",
+          }}
+        >
+          My Skills
+        </h2>
 
         <div className="skills-grid">
           <SpotlightCard spotlightColor="rgba(0, 229, 255, 0.2)">
@@ -143,8 +151,6 @@ function Skills() {
               <SkillBar skill="Sql" level="80%" />
             </div>
           </SpotlightCard>
-
-
 
           <SpotlightCard spotlightColor="rgba(0, 229, 255, 0.2)">
             <div
@@ -246,7 +252,6 @@ function Skills() {
             fontSize: "3rem",
             marginTop: "100px",
             textAlign: "center",
-            
           }}
         >
           My Tools
@@ -254,11 +259,10 @@ function Skills() {
         <div
           style={{
             display: "flex",
-            justifyContent: "flex end",
+            justifyContent: "center",
             alignItems: "center",
             gap: "40px",
             flexWrap: "wrap",
-            marginLeft: "470px",
             marginTop: "30px",
             marginBottom: "10px",
             padding: "0 20px",
