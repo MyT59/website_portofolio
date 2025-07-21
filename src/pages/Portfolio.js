@@ -1,12 +1,49 @@
-import Particles from '../components/Particles';
-import malwareLogo from '../asset/malware.png';
-import webLogo from '../asset/Web.png';
-import androidLogo from '../asset/androidd.png';
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import androidLogo from "../asset/androidd.png";
+import webLogo from "../asset/Web.png";
+import malwareLogo from "../asset/malware.png";
+import Particles from "../components/Particles";
+
+const data = [
+  {
+    img: androidLogo,
+    title: "Mobile Programming",
+    desc: "E-commerce Android App",
+  },
+  {
+    img: webLogo,
+    title: "Web Programming",
+    desc: "Virtual Tour Website",
+  },
+  {
+    img: malwareLogo,
+    title: "Cyber Security",
+    desc: "Malware Analysis",
+  },
+];
 
 function Portfolio() {
+  const [index, setIndex] = useState(0);
+
+  const nextSlide = () => {
+    setIndex((prev) => (prev + 1) % data.length);
+  };
+
+  const prevSlide = () => {
+    setIndex((prev) => (prev - 1 + data.length) % data.length);
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section id="portfolio" data-aos="zoom-in-up">
-          <Particles
+    <section id="portfolio" style={{ position: "relative", minHeight: "100vh" }}>
+      <Particles
         particleCount={250}
         particleColors={["#00ffff", "#ffffff", "#00ffcc"]}
         moveParticlesOnHover={true}
@@ -14,60 +51,100 @@ function Portfolio() {
         speed={0.3}
         particleBaseSize={50}
         sizeRandomness={2}
-        className=""
       />
-      <h2 style={{ fontSize: "4rem", marginBottom: "20px",textAlign: "center", }}>Portfolio</h2>
-<div className="card-container">
-  <div className="card">
-    <div className="card-header facebook">
-      <img src={androidLogo} alt="Android" className="logo" />
-      <h1>Mobile Programing</h1>
-    </div>
-    <div className="card-body">
-      <h2>E-commerce Mobile App</h2>
-      <p className="date">Sep 2024 - Dec 2024</p>
-      <p style={{fontSize:'larger'}}>Developed an e-commerce Android app using Android Studio</p>
-      <ul>
-        <li>product data storage and SQLite for local user account management</li>
-        <li>Designed a seamless shopping experience with features</li>
-      </ul>
-    </div>
-  </div>
+      <h2 style={{ fontSize: "4rem", marginBottom: "40px", textAlign: "center" }}>Portfolio</h2>
 
-  <div className="card">
-    <div className="card-header quora">
-      <img src={webLogo} alt="Web" className="logo" />
-      <h1>Web Programing</h1>
-    </div>
-    <div className="card-body">
-      <h2>Dorm and Campus Virtual Tour</h2>
-      <p className="date">Nov 2024 - Dec 2024</p>
-      <p style={{fontSize:'larger'}}>Developed Dorm and Campus Virtual Tour website</p>
-      <ul>
-        <li>Designed and developed an interactive virtual tour website</li>
-        <li>Experimented with different 360° tour platforms</li>
-      </ul>
-    </div>
-  </div>
+      <div style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "relative",
+        height: "400px",
+        overflow: "hidden",
+      }}>
+        <div style={{
+          display: "flex",
+          transition: "transform 0.5s",
+          transform: `translateX(calc(-${index} * 320px))`,
+          gap: "50px",
+        }}>
+          {data.map((item, i) => (
+            <motion.div
+              key={i}
+              style={{
+                width: "300px",
+                height: "350px",
+                background: "#111827",
+                padding: "20px",
+                borderRadius: "15px",
+                color: "#fff",
+                textAlign: "center",
+                flexShrink: 0,
+                transform: i === index ? "scale(1)" : "scale(0.85)",
+                opacity: i === index ? 1 : 0.5,
+                transition: "all 0.5s",
+                boxShadow: "0 0 20px rgba(0,255,255,0.2)",
+              }}
+            >
+              <img src={item.img} alt={item.title} style={{ width: "80px", marginBottom: "20px" }} />
+              <h3 style={{ fontSize: "1.5rem" }}>{item.title}</h3>
+              <p style={{ marginTop: "10px", fontSize: "1rem" }}>{item.desc}</p>
+            </motion.div>
+          ))}
+        </div>
 
-  <div className="card">
-    <div className="card-header airbnb">
-      <img src={malwareLogo} alt="Malware" className="logo" />
-      <h1>Cyber Security</h1>
-    </div>
-    <div className="card-body">
-      <h2>Malware Analysis</h2>
-      <p className="date">Mar 2025 - May 2025</p>
-      <p style={{fontSize:'larger'}}>Analysing Malware using flare virtual machine and remnux in virtual box</p>
-      <ul>
-        <li>Basic Static Analysis</li>
-        <li>Basic Dynamic Analysis</li>
-        <li>Reverse Engineering</li>
-      </ul>
-    </div>
-  </div>
-</div>
+        <button
+          onClick={prevSlide}
+          style={{
+            position: "absolute",
+            left: "20px",
+            top: "50%",
+            transform: "translateY(-50%)",
+            background: "#00ffff",
+            border: "none",
+            borderRadius: "50%",
+            width: "40px",
+            height: "40px",
+            cursor: "pointer",
+          }}
+        >
+          {"<"}
+        </button>
 
+        <button
+          onClick={nextSlide}
+          style={{
+            position: "absolute",
+            right: "20px",
+            top: "50%",
+            transform: "translateY(-50%)",
+            background: "#00ffff",
+            border: "none",
+            borderRadius: "50%",
+            width: "40px",
+            height: "40px",
+            cursor: "pointer",
+          }}
+        >
+          {">"}
+        </button>
+      </div>
+
+      {/* Dot Indicator */}
+      <div style={{ display: "flex", justifyContent: "center", marginTop: "20px", gap: "10px" }}>
+        {data.map((_, i) => (
+          <div
+            key={i}
+            style={{
+              width: "10px",
+              height: "10px",
+              borderRadius: "50%",
+              background: i === index ? "#00ffff" : "#444",
+              transition: "all 0.3s",
+            }}
+          ></div>
+        ))}
+      </div>
     </section>
   );
 }
