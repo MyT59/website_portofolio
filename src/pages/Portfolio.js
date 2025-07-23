@@ -3,46 +3,71 @@ import { motion } from "framer-motion";
 import androidLogo from "../asset/androidd.png";
 import webLogo from "../asset/Web.png";
 import malwareLogo from "../asset/malware.png";
+import riskLogo from "../asset/risk.png";
+import cafeLogo from "../asset/cafe.png";
+import portoLogo from "../asset/porto.png";
 import Particles from "../components/Particles";
 
 const data = [
   {
     img: androidLogo,
-    title: "Mobile Programming",
-    desc: "E-commerce Android App",
+    title: "E-commerce Android App",
+    desc: "Android App (2024)",
+    details: ["Developed an e-commerce Android app using Android Studio, integrating Firebase for product data storage and SQLite for local user account management.", "•	Designed the UI/UX of the application using Figma"],
   },
   {
     img: webLogo,
-    title: "Web Programming",
-    desc: "Virtual Tour Website",
+    title: "Virtual Tour Website",
+    desc: "Website (2024)",
+    details: ["Capturing every spot on either campus or dorm to make sure we have a good visualization.", "•	Designed and developed an interactive virtual tour website."],
   },
   {
     img: malwareLogo,
-    title: "Cyber Security",
-    desc: "Malware Analysis",
+    title: "Malware Analysis",
+    desc: "Analysis (2025)",
+    details: ["Final project collaboration with P.T. Square Gate One.", "Analyze real-world malware, examine how the malware works using static analysis, dynamic analysis, and reverse engineering."],
+  },
+  {
+    img: cafeLogo,
+    title: "Café Menu Order",
+    desc: "Order System (2025)",
+    details: ["Create ordering menu aplication with PHP and My SQL"],
+  },
+  {
+    img: riskLogo,
+    title: "SRM Project",
+    desc: "System (2025)",
+    details: ["Develop a risk security assessment website based on the security framework Octave Allegro"],
+  },
+  {
+    img: portoLogo,
+    title: "Website Portofolio",
+    desc: "Personal Website (2025)",
+    details: ["Create a website to show my Portofolio and some of my project "],
   },
 ];
 
 function Portfolio() {
   const [index, setIndex] = useState(0);
 
-  const nextSlide = () => {
-    setIndex((prev) => (prev + 1) % data.length);
-  };
-
-  const prevSlide = () => {
-    setIndex((prev) => (prev - 1 + data.length) % data.length);
-  };
-
   useEffect(() => {
     const interval = setInterval(() => {
-      nextSlide();
-    }, 5000);
+      setIndex((prev) => (prev + 1) % data.length);
+    }, 10000);
     return () => clearInterval(interval);
   }, []);
 
+  const handleDragEnd = (event, info) => {
+    if (info.offset.x < -100) {
+      setIndex((prev) => (prev + 1) % data.length);
+    }
+    if (info.offset.x > 100) {
+      setIndex((prev) => (prev - 1 + data.length) % data.length);
+    }
+  };
+
   return (
-    <section id="portfolio" style={{ position: "relative", minHeight: "100vh" }}>
+    <section id="portfolio" style={{ position: "relative", minHeight: "100vh", overflow: "hidden" }}>
       <Particles
         particleCount={250}
         particleColors={["#00ffff", "#ffffff", "#00ffcc"]}
@@ -52,28 +77,33 @@ function Portfolio() {
         particleBaseSize={50}
         sizeRandomness={2}
       />
+
       <h2 style={{ fontSize: "4rem", marginBottom: "40px", textAlign: "center" }}>Portfolio</h2>
 
       <div style={{
+        width: "100%",
+        position: "relative",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        position: "relative",
-        height: "400px",
-        overflow: "hidden",
       }}>
-        <div style={{
-          display: "flex",
-          transition: "transform 0.5s",
-          transform: `translateX(calc(-${index} * 320px))`,
-          gap: "50px",
-        }}>
+        <motion.div
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          onDragEnd={handleDragEnd}
+          animate={{ x: `calc(50vw - ${index * 360}px - 150px)` }}
+          transition={{ type: "spring", stiffness: 400, damping: 30 }}
+          style={{
+            display: "flex",
+            gap: "60px",
+            cursor: "grab",
+          }}
+        >
           {data.map((item, i) => (
             <motion.div
               key={i}
               style={{
                 width: "300px",
-                height: "350px",
                 background: "#111827",
                 padding: "20px",
                 borderRadius: "15px",
@@ -89,48 +119,16 @@ function Portfolio() {
               <img src={item.img} alt={item.title} style={{ width: "80px", marginBottom: "20px" }} />
               <h3 style={{ fontSize: "1.5rem" }}>{item.title}</h3>
               <p style={{ marginTop: "10px", fontSize: "1rem" }}>{item.desc}</p>
+              <ul style={{ textAlign: "left", fontSize: "0.9rem", paddingLeft: "1rem", marginTop: "10px" }}>
+                {item.details.map((detail, idx) => (
+                  <li key={idx} style={{ marginBottom: "5px" }}>{detail}</li>
+                ))}
+              </ul>
             </motion.div>
           ))}
-        </div>
-
-        <button
-          onClick={prevSlide}
-          style={{
-            position: "absolute",
-            left: "20px",
-            top: "50%",
-            transform: "translateY(-50%)",
-            background: "#00ffff",
-            border: "none",
-            borderRadius: "50%",
-            width: "40px",
-            height: "40px",
-            cursor: "pointer",
-          }}
-        >
-          {"<"}
-        </button>
-
-        <button
-          onClick={nextSlide}
-          style={{
-            position: "absolute",
-            right: "20px",
-            top: "50%",
-            transform: "translateY(-50%)",
-            background: "#00ffff",
-            border: "none",
-            borderRadius: "50%",
-            width: "40px",
-            height: "40px",
-            cursor: "pointer",
-          }}
-        >
-          {">"}
-        </button>
+        </motion.div>
       </div>
 
-      {/* Dot Indicator */}
       <div style={{ display: "flex", justifyContent: "center", marginTop: "20px", gap: "10px" }}>
         {data.map((_, i) => (
           <div
