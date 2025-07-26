@@ -4,6 +4,7 @@ import avatar from "../asset/profil.jpg";
 import DecryptedText from "../components/DecryptedText";
 import Orb from "../components/Orb";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import cvFile from "../asset/CV_Michael_Tampubolon_EN.pdf"; // Import CV PDF
 
 function Home() {
   return (
@@ -53,10 +54,9 @@ function Home() {
             text="I'm a cyber security enthusiast & Frontend Developer"
             animateOn="view"
             revealDirection="center"
-            className=""
             style={{ fontSize: "40px", color: "white", marginBottom: "20px" }}
           />
-          <div style={{ display: "flex", gap: "20px", marginTop: "10px" }}>
+          <div style={{ display: "flex", gap: "20px", marginTop: "10px", alignItems: "center", flexWrap: "wrap" }}>
             <a
               href="https://github.com/MyT59"
               target="_blank"
@@ -72,6 +72,35 @@ function Home() {
               style={{ color: "white", fontSize: "80px" }}
             >
               <FaLinkedin />
+            </a>
+            <a
+              href={cvFile}
+              download="Michael_Tampubolon_CV.pdf"
+              style={{
+                textDecoration: "none",
+                color: "#000",
+                background: "#00ffff",
+                padding: "10px 20px",
+                borderRadius: "10px",
+                fontSize: "20px",
+                fontWeight: "bold",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                height: "60px",
+                boxShadow: "0 0 10px rgba(0, 255, 255, 0.6)",
+                transition: "all 0.3s ease-in-out",
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.transform = "scale(1.05)";
+                e.target.style.boxShadow = "0 0 20px rgba(0, 255, 255, 0.9)";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.transform = "scale(1)";
+                e.target.style.boxShadow = "0 0 10px rgba(0, 255, 255, 0.6)";
+              }}
+            >
+              Download CV
             </a>
           </div>
         </div>
