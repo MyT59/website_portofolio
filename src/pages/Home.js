@@ -4,7 +4,7 @@ import avatar from "../asset/profil.jpg";
 import DecryptedText from "../components/DecryptedText";
 import Orb from "../components/Orb";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import cvFile from "../asset/CV_Michael_Tampubolon_EN.pdf"; // Import CV PDF
+import cvFile from "../asset/CV Michael Hasudungan Tampubolon B88.pdf"; // Import CV PDF
 
 function Home() {
   return (
